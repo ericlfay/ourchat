@@ -1,7 +1,7 @@
 #coding:utf-8
 import tornado.ioloop
 import sys
-from app_settings import settings
+from settings import settings
 PORT = '8080'
 if __name__ == "__main__":
     if len(sys.argv) > 1:

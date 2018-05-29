@@ -1,6 +1,6 @@
 import os
 import models
-from app_settings import database
+from settings import database
 
 try:
     import psycopg2

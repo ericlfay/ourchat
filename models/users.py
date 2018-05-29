@@ -1,9 +1,15 @@
 import datetime
 from peewee import *
-from app_settings import database
+# from settings import database
+database = PostgresqlDatabase(
+    'ddvofnab',
+    user='ddvofnab',
+    password='zL26CJ8avpFnpOag3ke2v29laiq7F8GX',
+    host='pellefant.db.elephantsql.com',
+    port=5432,)
+database.connect()
 
 class Users(Model):
-    _id = UUIDField(primary_key=True)
     username = CharField(unique=True)
     created_date = DateTimeField(default=datetime.datetime.now)
     password = CharField()
