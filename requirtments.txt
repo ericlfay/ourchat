@@ -1,2 +1,5 @@
-sqlalchemy == 1.2.7
+peewee  == 3.4.0
 tornado == 5.0.2
+psycopg2 == 2.7.4
+pycrypto == 2.6.1
+

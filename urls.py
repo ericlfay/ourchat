@@ -1,5 +1,5 @@
 #coding:utf-8
-from views.index import MainHandler
+from views.sign import  SignHandler
 urls = [
-(r'/', MainHandler),
+(r'/sign', SignHandler),
 ]
