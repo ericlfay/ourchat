@@ -5,6 +5,6 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         cookie = self.get_secure_cookie("email")
         if cookie:
-        	self.render('index.html')
+            self.render('index.html')
         else:
-        	self.redirect("/login/")
+            self.redirect("/login/")

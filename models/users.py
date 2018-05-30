@@ -34,3 +34,16 @@ class Users(Model):
             return self.password == PBKDF2.crypt(pwd, self.password)
         else:
             return False
+
+
+class InviteCode(Model):
+    owner = ForeignKeyField(Users)
+    created_date = DateTimeField(default=datetime.datetime.now)
+    count = IntegerField(default=0)
+    code = TextField()
+    class Meta:
+        database = database
+
+    def new_code(self):
+        print("++++++++++++++++++++++++++++++++++++++++")
+        self.code = PBKDF2.crypt("secret")
