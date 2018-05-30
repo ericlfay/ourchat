@@ -1,11 +1,11 @@
 import os
 import models
-from settings import database
+from models.database import database
+from settings import logger
 
 try:
-    import psycopg2
-    from psycopg2 import extensions as pg_extensions
-except ImportError:
-    psycopg2 = None
-
-database.create_tables(models.__all__, safe=True)
+    database.create_tables(models.__all__, safe=True)
+    logger.info("All tables created !")
+except:
+    logger.info("All tables failed !")
+    
