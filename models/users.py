@@ -48,4 +48,4 @@ class InviteCode(Model):
     
     @property
     def new_code(self):
-        return "".join(random.sample(string.ascii_letters + string.digits,12))
+        return "".join(random.sample(string.ascii_letters + string.digits,18))
