@@ -1,4 +1,6 @@
 import datetime
+import random,string
+
 from peewee import *
 from .database import database
 
@@ -43,7 +45,7 @@ class InviteCode(Model):
     code = TextField()
     class Meta:
         database = database
-
+    
+    @property
     def new_code(self):
-        print("++++++++++++++++++++++++++++++++++++++++")
-        self.code = PBKDF2.crypt("secret")
+        return "".join(random.sample(string.ascii_letters + string.digits,12))

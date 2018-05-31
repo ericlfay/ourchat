@@ -20,8 +20,9 @@
         $("#submit").click(function(){
             console.log('1');
             $.post("/sign/",{"email":$("#inputEmail").val(),
-                            "password":$("#inputPassword").val(),
-                            "_xsrf":$("input[name='_xsrf']").val()},
+                             "password":$("#inputPassword").val(),
+                             "code":$("#invite").val(),
+                             "_xsrf":$("input[name='_xsrf']").val()},
                   function(data){
                 if (data.status=="success"){
                     window.location.href = data.url;
@@ -49,7 +50,7 @@
         <label for="invite" class="sr-only">invite</label>
         <input type="text" id="invite" class="form-control" placeholder="输入您的邀请码" name="invite" required>
         <button class="btn btn-lg btn-primary btn-block" id="submit" type="button">注册</button>
-        <a href="/login">已有账号？点击登陆</a>
+        <a href="/login/">已有账号？点击登陆</a>
       </form>
 
     </div> 

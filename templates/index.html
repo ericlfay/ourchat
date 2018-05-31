@@ -7,11 +7,10 @@
     <script>
     $(document).ready(function(){
         $("#get_code").click(function(){
-            $.ajax("/get_invide_code/",function(data){
+            $.get("/get_invide_code/",function(data){
                 $("#invidecode").text(data);
             });
         }
-
         );
     });
     </script>
@@ -19,7 +18,7 @@
    
 <body>
     <h1>Hello, World! </h1><a href="/logout/">登出</a>
-    <div id="invidecode"></div> <button id="get_code">获取邀请码</button>
+    <p id="invidecode"></p> <button id="get_code">获取邀请码</button>
 </body>
 
 
