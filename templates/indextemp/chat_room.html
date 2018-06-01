@@ -1,0 +1,40 @@
+
+  <style>
+      #contents{
+          height: 600px;
+          overflow: scroll;
+      }
+</style>
+
+   <script src="/static/jquery/jquery.min.js"></script>
+     <script src="/static/layer/layer.js"></script>
+     
+    <script type="text/javascript">
+        
+        var ws = new WebSocket("ws://127.0.0.1:8080/chat/");
+        ws.onmessage = function(e) {
+            $("#contents").append("<div class='desc'><div class='thumb'><span class='badge bg-theme'><i class='fa fa-clock-o'></i></span></div><div class='details'>" + 
+                                  e.data + 
+                                  "<br/></p></div></div>");
+        }
+        function sendMsg() {
+            var msg = $("#msg").val();
+            if (msg ==""){
+                console.log("213");
+                layer.msg('玩命提示中');
+            }
+            else{            
+                ws.send(msg);
+            $("#contents").scrollTop($("#contents")[0].scrollHeight);
+            $("#msg").val("");}
+
+            
+        }
+    </script>                      
+      <div class="col-lg-8 ds" >
+            <h3>NOTIFICATIONS</h3>    
+     <div id="contents" ></div>  
+     <textarea id="msg" class="col-lg-8 "></textarea>
+   <a href="javascript:;" onclick="sendMsg()"><button>发送</button></a>                        
+      </div>
+    

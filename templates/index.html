@@ -13,15 +13,20 @@
     <link href="/static/assets/css/bootstrap.css" rel="stylesheet">
 
     <link href="/static/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/static//static/assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="/static/assets/js/gritter/css/jquery.gritter.css" />
     <link rel="stylesheet" type="text/css" href="/static/assets/lineicons/style.css">    
     
 
     <link href="/static/assets/css/style.css" rel="stylesheet">
     <link href="/static/assets/css/style-responsive.css" rel="stylesheet">
-
+    <script src="/static/jquery/jquery.min.js"></script>
     <script src="/static/assets/js/chart-master/Chart.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+    	$("#main").load("/chat_rooms/");
+        });
+    </script>
     
   </head>
 
@@ -262,9 +267,14 @@
               <!-- sidebar menu end-->
           </div>
       </aside>
-      <!--sidebar end-->
-      
+       
+       
+       
+        <section id="main-content">
+          <section class="wrapper" id = "main">
+          </section>
       </section>
+            
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="/static/assets/js/jquery.js"></script>

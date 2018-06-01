@@ -5,7 +5,11 @@ from models.users import *
 
 class LoginHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('login.html')
+        cookie = self.get_secure_cookie("email", None)
+        if cookie:
+            self.redirect("/")
+        else:
+            self.render('login.html')
 
     def post(self):
         email = self.get_argument('email')

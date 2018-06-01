@@ -3,7 +3,12 @@ from models.users import *
 
 class SignHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('sign.html')
+        cookie = self.get_secure_cookie("email", None)
+        if cookie:
+            self.redirect("/")
+        else:
+            self.render('sign.html')
+        
 
     def post(self):
         email = self.get_argument('email')
